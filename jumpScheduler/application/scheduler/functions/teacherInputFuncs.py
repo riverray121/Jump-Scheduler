@@ -54,7 +54,7 @@ def populateStudentsWithTeacherInput(allStudentsDic, teacherInput, manzanitaClas
 # Print the schedules of all students
 def printAllStudentsSched(allStudentsDic):
     row = 0
-    workbook2 = xlsxwriter.Workbook("Book2.xlsx")
+    workbook2 = xlsxwriter.Workbook("application/excell/generated/Book2.xlsx")
     worksheet2 = workbook2.add_worksheet("secSheet")
     cell_format = workbook2.add_format()
     cell_format.set_text_wrap()

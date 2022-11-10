@@ -891,7 +891,7 @@ class student:
     def printStudentSched(self, print=False):
 
         # Write to studentSchedules.txt file 
-        with open("src/printOuts/studentSchedules.txt", "a") as newFile:
+        with open("application/scheduler/printOuts/studentSchedules.txt", "a") as newFile:
 
             newFile.write(f'ID: {self.studentID} LAST: {self.lastName} \n')
             if print: print(f'ID: {self.studentID} LAST: {self.lastName} \n')

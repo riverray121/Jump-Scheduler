@@ -50,7 +50,17 @@ def schedule():
 
     teamID = request.form["team ID"]
 
-    teacherInput = [ratingsArray, teamID]
+    math8 = request.form.get('math8')
+    math7 = request.form.get('math7')
+    advspn = request.form.get('advspn')
+    spn = request.form.get('spn')
+    socialstud = request.form.get('socialstud')
+    sci = request.form.get('sci')
+    langart = request.form.get('langart')
+
+    classesToSchedule = [math8, math7, advspn, spn, socialstud, sci, langart]
+
+    teacherInput = [ratingsArray, teamID, classesToSchedule]
 
     # Run the scheuduler using the uploaded excell file and the teacher input / preferences 
     runScheduler.scheduleForAMS(teacherInput)

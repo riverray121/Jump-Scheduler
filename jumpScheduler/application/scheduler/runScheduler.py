@@ -44,12 +44,12 @@ def scheduleForAMS(teacherInputs):
     # principalWeights = functions.getPrincipalsIdealWeights()
     principalWeights = wP.processWebPrincipalWeights(teacherInputs[0])
 
-    # # Schedule the students into the core class and print results 
-    # functions.scheduleStudents(teamStudentsDic, teamCoresByCourseNum, ratingsAverageArray, principalWeights, teamClassesAsDic, teamHRByCourseNum)
+    # Schedule the students into the core class and print results 
+    functions.scheduleStudents(teamStudentsDic, teamCoresByCourseNum, ratingsAverageArray, principalWeights, teamClassesAsDic, teamHRByCourseNum, teacherInputs[2])
     
-    # settings.workbook.close()
+    settings.workbook.close()
     
-    # #functions.writeToExcelTest()
-    # teachInp.printAllStudentsSched(teamStudentsDic)
+    #functions.writeToExcelTest()
+    teachInp.printAllStudentsSched(teamStudentsDic)
 
-    # masterXL.writeToMasterExcell(teamStudentsDic)
+    masterXL.writeToMasterExcell(teamStudentsDic)

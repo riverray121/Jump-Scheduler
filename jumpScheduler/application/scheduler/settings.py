@@ -28,7 +28,7 @@ def initVariables():
     xlConstTwo = 2
 
     global workbook 
-    workbook = xlsxwriter.Workbook("Book1.xlsx")
+    workbook = xlsxwriter.Workbook("application/excell/generated/Book1.xlsx") 
     global worksheet
     worksheet = workbook.add_worksheet("Bulk Roster w Stats")
     global worksheet2

@@ -540,7 +540,7 @@ def excellTemp(teamClassesByCourseNum, course, colmOne, colmTwo):
     settings.xlConstOne = settings.xlConstOne * 2
     settings.xlConstTwo = settings.xlConstOne + 2
 
-def scheduleStudents(teamStudentsDic, teamCoresByCourseNum, ratingsAverageArray, principalWeights, teamClassesAsDic, teamHRByCourseNum):
+def scheduleStudents(teamStudentsDic, teamCoresByCourseNum, ratingsAverageArray, principalWeights, teamClassesAsDic, teamHRByCourseNum, toSchedInputs):
     """ Function to schedule everything 
     """
 
@@ -584,24 +584,25 @@ def scheduleStudents(teamStudentsDic, teamCoresByCourseNum, ratingsAverageArray,
     # Output: Students scheduled into all classes, distrubuted equally by
             # Grade, gender, acidemics, behavior, sped, 504, migrant ed, home language (prioritized in that order)
 
-    courseArr = []
-    toScheArr = []
+    # courseArr = []
+    # toScheArr = []
+    toScheArr = toSchedInputs
 
-    print(f'Please choose which classes you would like to schedule: ')
-    for i, course in enumerate(teamCoresByCourseNum):
-        courseArr.append(course)
-        print(f'({i}) {course}')
+    # print(f'Please choose which classes you would like to schedule: ')
+    # for i, course in enumerate(teamCoresByCourseNum):
+    #     courseArr.append(course)
+    #     print(f'({i}) {course}')
 
-    print(f'Type each class you would like (0 - {int(len(courseArr)) - 1}) followed by ENTER \nWhen finished press "d" followed by ENTER')
+    # print(f'Type each class you would like (0 - {int(len(courseArr)) - 1}) followed by ENTER \nWhen finished press "d" followed by ENTER')
 
-    userInput = ''
+    # userInput = ''
 
-    while userInput != "d":
-        userInput = input()
-        if userInput == "d": break
-        toScheArr.append(courseArr[int(userInput)])
+    # while userInput != "d":
+    #     userInput = input()
+    #     if userInput == "d": break
+    #     toScheArr.append(courseArr[int(userInput)])
 
-    print(toScheArr)
+    # print(toScheArr)
 
     # Order in which to schedule classes 
     scheduleOrder = ['M_INT_MATH8', 'M_INT_MATH7', 'M_SPN_ADV', 'M_SPN', 'M_SS_7_8', 'M_SCI', 'M_LA']

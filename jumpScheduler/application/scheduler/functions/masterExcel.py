@@ -250,14 +250,14 @@ def writeToMasterExcell(teamStudentsDic):
     """
 
     # Get the master excell file 
-    file_name = os.listdir('INPUT/')
+    file_name = os.listdir('application/excell/import/')
 
     # duplicate the file 
-    shutil.copy2(f'INPUT/{file_name[0]}', 'OUTPUT/')
+    shutil.copy2(f'application/excell/import/{file_name[0]}', 'application/excell/export/')
 
 
     # load excel file
-    workbook = load_workbook(f'OUTPUT/{file_name[0]}')
+    workbook = load_workbook(f'application/excell/export/{file_name[0]}')
     
     # Get main sheet 
     workbook.active = workbook.worksheets[0]
@@ -319,7 +319,7 @@ def writeToMasterExcell(teamStudentsDic):
         
     
         #save the file
-        workbook.save(f'OUTPUT/{file_name[0]}')
+        workbook.save(f'application/excell/export/{file_name[0]}')
 
         workbook.close()
 

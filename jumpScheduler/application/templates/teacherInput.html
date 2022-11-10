@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/gradient.css') }}">
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+    <script type="text/javascript">
+        $('#input_form').onsubmit(function() {
+          $('#loading').show(); 
+          return true;
+        });
+    </script>
 </head>
 <body>
+    <div id="main">
     <h1> On a Scale of 1->10, How Much do You Value: </h1>
-    <form action="/schedule" method="POST">
+    <form action="/schedule" method="POST" id="input_form">
     
     <label for="genderRatio">An Equal Gender Ratio                 :</label>
     <input type="text" placeholder="Gender Ratio" name="gender ratio"><br>
@@ -28,24 +36,49 @@
     <input type="Writing" placeholder="Writing Ratings" name="writing ratings"><br>
 
     <h1> Please enter the team you would like to schedule for: </h1>
-    <label for="team">Aspen (1), Manzinita (2), Sequoia (2): </label>
+    <label for="team">Aspen (1), Manzinita (2), Sequoia (3): </label>
     <input type="text" placeholder="Team" name="team ID"><br>
 
+    <h1> Please select the classes you would like to schedule: </h1>
+    <div>
+        <input type="checkbox" id="M_INT_MATH8" name="math8" value="M_INT_MATH8" />
+        <label for="M_INT_MATH8">M_INT_MATH8</label>
+    </div>
+    <div>
+        <input type="checkbox" id="M_INT_MATH7" name="math7" value="M_INT_MATH7" />
+        <label for="M_INT_MATH7">M_INT_MATH7</label>
+    </div>
+    <div>
+        <input type="checkbox" id="M_SPN_ADV" name="advspn" value="M_SPN_ADV" />
+        <label for="M_SPN_ADV">M_SPN_ADV</label>
+    </div>
+    <div>
+        <input type="checkbox" id="M_SPN" name="spn" value="M_SPN" />
+        <label for="M_SPN">M_SPN</label>
+    </div>
+    <div>
+        <input type="checkbox" id="M_SS_7_8" name="socialstud" value="M_SS_7_8" />
+        <label for="M_SS_7_8">M_SS_7_8</label>
+    </div>
+    <div>
+        <input type="checkbox" id="M_SCI" name="sci" value="M_SCI" />
+        <label for="M_SCI">M_SCI</label>
+    </div>
+    <div>
+        <input type="checkbox" id="M_LA" name="langart" value="M_LA" />
+        <label for="M_LA">M_LA</label>
+    </div>
 
+    <input type="submit" value="Submit" id="sub_button">
 
-
-    <!-- <input type="radio" id="Male" name="gender">
-    <label for="Male">Male</label>
-    <input type="radio" id="Female" name="gender">
-    <label for="Female">Female</label>
-    <input type="radio" id="Other" name="gender">
-    <label for="Other">Other</label><br><br><br> -->
-
-    <input type="submit" value="Submit">
+    <div id="loading" style="display:none;"> <img src="static/images/7VE.gif" alt="" />Loading!</div>
     </form>
+    </div>
 </body>
 </html>
 
+
+<!-- onclick="$('#loading').show(); -->
 
 <!-- <!DOCTYPE html>
 <html lang = "en">
