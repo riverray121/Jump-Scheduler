@@ -26,7 +26,7 @@ def excellUpload():
 def teacherInput():
     if request.method == 'POST':
         file = request.files['file'] 
-        file.save(f'application/excell/import/output.xlsx')
+        file.save(f'{application.config.root_path}/excell/import/output.xlsx')
         #data = pd.read_excel(f'jumpScheduler/application/excell/import/output.xlsx')
         
         #return render_template('ratings.html', data=data.to_dict())
