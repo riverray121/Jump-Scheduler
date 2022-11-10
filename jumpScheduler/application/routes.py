@@ -5,6 +5,7 @@
 from flask import Flask, request, render_template, send_file
 # import pandas as pd
 from jinja2  import TemplateNotFound
+import os
 
 from application import application
 from .scheduler import runScheduler
@@ -26,7 +27,10 @@ def excellUpload():
 def teacherInput():
     if request.method == 'POST':
         file = request.files['file'] 
+        if not os.path.exists(f'{application.config.root_path}/excell/import'): os.mkdir(f'{application.config.root_path}/excell/import')
+        if not os.path.exists(f'{application.config.root_path}/excell/export'): os.mkdir(f'{application.config.root_path}/excell/export')
         file.save(f'{application.config.root_path}/excell/import/output.xlsx')
+        print(f'APP ROOT PATH: {application.config.root_path}')
         #data = pd.read_excel(f'jumpScheduler/application/excell/import/output.xlsx')
         
         #return render_template('ratings.html', data=data.to_dict())
