@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gradient.css') }}">
+</head>
+<body>
+    <h1> On a Scale of 1->10, How Much do You Value: </h1>
+    <form action="/schedule" method="POST">
+    
+    <label for="genderRatio">An Equal Gender Ratio                 :</label>
+    <input type="text" placeholder="Gender Ratio" name="gender ratio"><br>
+
+    <label for="seventhToEighthRatio">An Equal Ratio of Seventh to Eighth Graders:</label>
+    <input type="text" placeholder="Grade Ratio" name="grade ratio"><br>
+
+    <label for="Behavior">An Even Distribution of Behavioral Ratings:</label>
+    <input type="text" placeholder="Behavior Ratings" name="behavior ratings"><br>
+
+    <label for="Academic">An Even Distribution of Academic Ratings:</label>
+    <input type="text" placeholder="Academic Ratings" name="academic ratings"><br>
+
+    <label for="Reading">An Even Distribution of Reading Ratings:</label>
+    <input type="text" placeholder="Reading Ratings" name="reading ratings"><br>
+
+    <label for="Writing">An Even Distribution of Writing Ratings:</label>
+    <input type="Writing" placeholder="Writing Ratings" name="writing ratings"><br>
+
+    <h1> Please enter the team you would like to schedule for: </h1>
+    <label for="team">Aspen (1), Manzinita (2), Sequoia (2): </label>
+    <input type="text" placeholder="Team" name="team ID"><br>
+
+
+
+
+    <!-- <input type="radio" id="Male" name="gender">
+    <label for="Male">Male</label>
+    <input type="radio" id="Female" name="gender">
+    <label for="Female">Female</label>
+    <input type="radio" id="Other" name="gender">
+    <label for="Other">Other</label><br><br><br> -->
+
+    <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<form method="POST">
+    <input name="text">
+    <input type="submit">
+</form>
+<form method="POST">
+    <input name="text">
+    <input type="submit">
+</form> -->
