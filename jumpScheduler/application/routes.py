@@ -69,6 +69,8 @@ def schedule():
     # Run the scheuduler using the uploaded excell file and the teacher input / preferences 
     runScheduler.scheduleForAMS(teacherInput)
 
+    print("SHEDULER COMPLETE")
+
     return render_template('excelDownload.html')
 
 @application.route('/excell-download')
