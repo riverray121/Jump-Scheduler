@@ -257,7 +257,6 @@ def writeToMasterExcell(teamStudentsDic):
     # duplicate the file 
     shutil.copy2(f'application/excell/import/{file_name[0]}', 'application/excell/export/')
 
-
     # load excel file
     # workbookRead = load_workbook(filename=f'application/excell/import/{file_name[0]}', data_only=True)
     workbook = load_workbook(f'application/excell/export/{file_name[0]}')
