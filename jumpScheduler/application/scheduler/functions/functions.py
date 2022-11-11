@@ -604,6 +604,8 @@ def scheduleStudents(teamStudentsDic, teamCoresByCourseNum, ratingsAverageArray,
 
     # print(toScheArr)
 
+    print("Begining Scheduling")
+
     # Order in which to schedule classes 
     scheduleOrder = ['M_INT_MATH8', 'M_INT_MATH7', 'M_SPN_ADV', 'M_SPN', 'M_SS_7_8', 'M_SCI', 'M_LA']
 
