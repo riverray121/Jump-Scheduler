@@ -70,6 +70,9 @@ def cleanTXTFiles():
 
     if exists('application/excell/import/.DS_Store'): os.remove('application/excell/import/.DS_Store')
 
+    if exists('application/excell/import/output.xlsx'): os.remove('application/excell/import/output.xlsx')
+    if exists('application/excell/export/output.xlsx'): os.remove('application/excell/export/output.xlsx')
+
 def startUpPrompts():
     """ Get information from the user nessisary to run the program 
     """
