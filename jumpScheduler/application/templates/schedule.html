@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gradient.css') }}">
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+    <script type="text/javascript">
+        $('#input_form').onsubmit(function() {
+            $('#loading').show(); 
+            return true;
+        });
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+            $('a#test').on('click', function(e) {
+                $('#loading').show(); 
+                e.preventDefault()
+                $.getJSON('/background_process_test',
+                    function(data) {
+                //do nothing
+                });
+                return false;
+            });
+            });
+    </script>
+</head>
+<body>
+    <h1>SHCEDULE</h1>
+
+    <a href=# id=test><button class='btn btn-default'>Run Scheduler</button></a>
+
+    <div id="loading" style="display:none;"> <img src="static/images/7VE.gif" alt="" />Loading!</div>
+
+    </form>
+    <form action="/scheduleCompleted" method="POST" id="input_form" enctype = "multipart/form-data">
+        <input type = "submit" value="Scheduling Finished"/>
+    </form>
+
+</body>
+</html>

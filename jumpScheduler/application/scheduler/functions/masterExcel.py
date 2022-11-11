@@ -275,8 +275,7 @@ def writeToMasterExcell(teamStudentsDic):
     for i in range(2, 130):
 
         # Update Progress Bar
-        if i % 3:
-            operations.printProgressBar(i - 1, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
+        operations.printProgressBar(i - 1, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
         stuID = str(teamSheet[f'C{i}'].value)
 

@@ -2,7 +2,7 @@
 
 """
 """
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file, session
 # import pandas as pd
 from jinja2  import TemplateNotFound
 import os
@@ -38,6 +38,7 @@ def teacherInput():
 
 @application.route('/schedule', methods=['POST'])
 def schedule():
+
     ratingsArray = []
     firsttext = request.form['gender ratio']
     ratingsArray.append(firsttext)
@@ -66,11 +67,29 @@ def schedule():
 
     teacherInput = [ratingsArray, teamID, classesToSchedule]
 
+    session['teacherInput'] = teacherInput
+
+    return render_template('schedule.html')
+
+
+#background process happening without any refreshing
+@application.route('/background_process_test')
+def background_process_test():
+   
+    print("Getting input")
+
+    teacherInput = session.get('teacherInput', None)
+
+    print("RUNNING SCHEDULER")
+
     # Run the scheuduler using the uploaded excell file and the teacher input / preferences 
     runScheduler.scheduleForAMS(teacherInput)
 
     print("SHEDULER COMPLETE")
+    return ("nothing")
 
+@application.route('/scheduleCompleted', methods=['POST'])
+def scheduleCompleted():
     return render_template('excelDownload.html')
 
 @application.route('/excell-download')
