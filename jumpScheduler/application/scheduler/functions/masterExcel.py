@@ -257,9 +257,11 @@ def writeToMasterExcell(teamStudentsDic):
 
 
     # load excel file
+    # workbookRead = load_workbook(filename=f'application/excell/import/{file_name[0]}', data_only=True)
     workbook = load_workbook(f'application/excell/export/{file_name[0]}')
     
     # Get main sheet 
+    # worksheetRead = workbookRead.worksheets[0]
     workbook.active = workbook.worksheets[0]
     
     teamSheet = workbook.active
@@ -273,7 +275,7 @@ def writeToMasterExcell(teamStudentsDic):
     for i in range(2, 130):
 
         # Update Progress Bar
-        if i % 2:
+        if i % 3:
             operations.printProgressBar(i - 1, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
         stuID = str(teamSheet[f'C{i}'].value)
@@ -322,5 +324,6 @@ def writeToMasterExcell(teamStudentsDic):
         #save the file
         workbook.save(f'application/excell/export/{file_name[0]}')
 
+        # workbookRead.close()
         workbook.close()
 
