@@ -9,6 +9,7 @@ import os
 
 from application import application
 from .scheduler import runScheduler
+from .scheduler.functions import opperations
 
 # App main route + generic routing
 @application.route('/')
@@ -29,6 +30,9 @@ def teacherInput():
         file = request.files['file'] 
         if not os.path.exists(f'{application.config.root_path}/excell/import'): os.mkdir(f'{application.config.root_path}/excell/import')
         if not os.path.exists(f'{application.config.root_path}/excell/export'): os.mkdir(f'{application.config.root_path}/excell/export')
+        
+        opperations.removeOldFiles()
+
         file.save(f'{application.config.root_path}/excell/import/output.xlsx')
         print(f'APP ROOT PATH: {application.config.root_path}')
         #data = pd.read_excel(f'jumpScheduler/application/excell/import/output.xlsx')

@@ -270,13 +270,13 @@ def writeToMasterExcell(teamStudentsDic):
 
     # Initial call to print 0% progress
     print('EDITING EXCELL SHEET')
-    #operations.printProgressBar(0, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
+    operations.printProgressBar(0, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     # Update the cores for each student in the master excell sheet 
     for i in range(2, 130):
 
         # Update Progress Bar
-        #operations.printProgressBar(i - 1, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
+        operations.printProgressBar(i - 1, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
         stuID = str(teamSheet[f'C{i}'].value)
 
@@ -321,11 +321,11 @@ def writeToMasterExcell(teamStudentsDic):
                 print(f'ERROR: Student {stuID} in master excell sheet not found in scheduled students dictionary')        
         
     
-        #save the file
-        workbook.save(f'application/excell/export/{file_name[0]}')
+    #save the file
+    workbook.save(f'application/excell/export/{file_name[0]}')
 
-        # workbookRead.close()
-        workbook.close()
+    # workbookRead.close()
+    workbook.close()
 
-        print("EDITING FINISHED")
+    print("EDITING FINISHED")
 

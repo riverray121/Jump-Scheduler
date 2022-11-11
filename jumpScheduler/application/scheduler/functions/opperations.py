@@ -70,6 +70,8 @@ def cleanTXTFiles():
 
     if exists('application/excell/import/.DS_Store'): os.remove('application/excell/import/.DS_Store')
 
+def removeOldFiles():
+
     if exists('application/excell/import/output.xlsx'): os.remove('application/excell/import/output.xlsx')
     if exists('application/excell/export/output.xlsx'): os.remove('application/excell/export/output.xlsx')
 
