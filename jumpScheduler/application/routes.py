@@ -30,6 +30,7 @@ def teacherInput():
         file = request.files['file'] 
         if not os.path.exists(f'{application.config.root_path}/excell/import'): os.mkdir(f'{application.config.root_path}/excell/import')
         if not os.path.exists(f'{application.config.root_path}/excell/export'): os.mkdir(f'{application.config.root_path}/excell/export')
+        if not os.path.exists(f'{application.config.root_path}/excell/generated'): os.mkdir(f'{application.config.root_path}/excell/generated')
         
         opperations.removeOldFiles()
 
