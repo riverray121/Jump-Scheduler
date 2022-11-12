@@ -14,7 +14,7 @@ from .scheduler.functions import opperations
 # App main route + generic routing
 @application.route('/')
 def index():
-    return render_template( '/index.html' )
+    return render_template('/index.html')
 
 # @app.route('/login')
 # def login():
