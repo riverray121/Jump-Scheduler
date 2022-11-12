@@ -1,4 +1,4 @@
-<head>
+<!-- <head>
    <meta charset="UTF-8">
    <title>Home</title>
    <link rel="stylesheet" href="{{ url_for('static', filename='css/gradient.css') }}">
@@ -9,5 +9,145 @@
          enctype = "multipart/form-data">
          <input type = "submit"/>
       </form>
+      <style>
+         p {
+           background-image: url('static/images/backgroundImage.png');
+         }
+      </style>
    </body>
-</html>
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("static/images/backgroundImage.png");
+
+  /* Full height */
+  height: 60%; 
+  width: 60%;
+
+  /* Center and scale the image nicely */
+  background-position-x: 500%;
+  background-position-y: -200%;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<style> 
+#example1 {
+  background-image: url("static/images/backgroundImage.png"), url("static/images/loadingGif.gif");
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+
+<h1>Multiple Backgrounds</h1>
+<p>The following div element has two background images:</p>
+
+<div id="example1">
+  <h1>Lorem Ipsum Dolor</h1>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+</div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+.navbar a:hover {
+  background-color: #000;
+
+}
+
+.active {
+  background-color: #04AA6D;
+
+}
+
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+
+  }
+}
+</style>
+<body>
+
+<img src="static/images/logo.png" alt="logo" width="200" height="75">
+
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+  <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+</div>
+
+<style>
+div.relative {
+   position: relative;
+   left: 200px;
+   padding: -300px;
+ }
+</style>
+<p> Here <br>is <br>an <br>image<br>that<br>I<br>like</p>
+<div class="relative">
+   <img src="static/images/backgroundImage.png" alt="background" width="500" height="400">
+</div>
+
+
+</body>
+</html> 
+

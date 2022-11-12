@@ -215,6 +215,9 @@ src/printOuts/studentSchedules.txt
 src/printOuts/studentSchedules.txt
 src/printOuts/theoStudentScheduleOutput.txt
 
+jumpScheduler/application/excell/export/output.xlsx
+jumpScheduler/application/excell/import/output.xlsx
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
