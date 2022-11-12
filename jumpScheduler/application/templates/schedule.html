@@ -5,30 +5,45 @@
     <title>Schedule</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/gradient.css') }}">
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $('#input_form').onsubmit(function() {
             $('#loading').show(); 
             return true;
         });
-    </script>
+    </script> -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type=text/javascript>
             $(function() {
             $('a#test').on('click', function(e) {
                 $('#loading').show(); 
                 e.preventDefault()
-                $.getJSON('/background_process_test',
-                    function(data) {
+                $.get('/background_process_test', function(data) {
                 //do nothing
+                    $('#status').html(data);  // update page with new data
                 });
                 return false;
             });
             });
     </script>
+
+    <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+    function updater() {
+      $.get('/data', function(data) {
+        $('#time').html(data);  // update page with new data
+      });
+    };
+    setInterval(updater, 1000);  // run `updater()` every 1000ms (1s)
+    </script> -->
+
 </head>
 <body>
-    <h1>SHCEDULE</h1>
+    <h1>Schedule</h1>
 
+    <div>
+        Completion Status: <span id="status"><span>
+    </div>
+    
     <a href=# id=test><button class='btn btn-default'>Run Scheduler</button></a>
 
     <div id="loading" style="display:none;"> <img src="static/images/loadingGif.gif" alt="" />Loading!</div>
