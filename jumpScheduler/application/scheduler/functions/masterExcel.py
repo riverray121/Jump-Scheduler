@@ -277,7 +277,7 @@ def writeToMasterExcell(teamStudentsDic):
     # Update the cores for each student in the master excell sheet 
     for i in range(2, 130):
 
-        time.sleep(0.1)
+        time.sleep(0.01)
 
         # Update Progress Bar
         settings.scheduleProgress = int(math.ceil((i/130) * 100))
