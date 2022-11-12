@@ -6,6 +6,7 @@ import xlsxwriter
 import shutil
 from copy import deepcopy
 from openpyxl import load_workbook
+import time
 
 
 # Get import path information
@@ -15,6 +16,7 @@ sys.path.append(parent)
  
 # Import from parent directory
 import settings as settings
+import globalSettings as globalSettings
 from classes import classes as classes
 import functions.opperations as operations
 
@@ -275,8 +277,10 @@ def writeToMasterExcell(teamStudentsDic):
     # Update the cores for each student in the master excell sheet 
     for i in range(2, 130):
 
+        time.sleep(1)
+
         # Update Progress Bar
-        settings.scheduleProgress += ((i/130) * 100)
+        globalSettings.scheduleProgress += ((i/130) * 100)
         operations.printProgressBar(i - 1, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
         stuID = str(teamSheet[f'C{i}'].value)
