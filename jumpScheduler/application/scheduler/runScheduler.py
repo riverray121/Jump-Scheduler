@@ -11,7 +11,6 @@ import functions.teacherInputFuncs as teachInp
 import functions.masterExcel as masterXL
 import settings as settings
 import classes.classes as classes
-import globalSettings as globalSettings
 
 
 def scheduleForAMS(teacherInputs):
@@ -54,8 +53,3 @@ def scheduleForAMS(teacherInputs):
     teachInp.printAllStudentsSched(teamStudentsDic)
 
     masterXL.writeToMasterExcell(teamStudentsDic)
-
-
-def initGlobalWebSettings():
-
-    globalSettings.initGlobalVariables()

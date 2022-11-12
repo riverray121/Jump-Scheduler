@@ -11,7 +11,6 @@ import datetime
 from application import application
 from .scheduler import runScheduler
 from .scheduler import settings
-from .scheduler import globalSettings
 from .scheduler.functions import opperations
 
 # App main route + generic routing
@@ -46,8 +45,6 @@ def teacherInput():
 
 @application.route('/schedule', methods=['POST'])
 def schedule():
-
-    runScheduler.initGlobalWebSettings()
 
     ratingsArray = []
     firsttext = request.form['gender ratio']
@@ -104,8 +101,9 @@ def background_process_test():
 
 @application.route('/progress')
 def schedule_progress():
-    print(globalSettings.scheduleProgress)
-    return str(globalSettings.scheduleProgress)
+    # print(opperations.getScheduleProgress())
+    # print("\n")
+    return str(opperations.getScheduleProgress())
 
 @application.route('/scheduleCompleted', methods=['POST'])
 def scheduleCompleted():
