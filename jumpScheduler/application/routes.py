@@ -6,6 +6,7 @@ from flask import Flask, request, render_template, send_file, session
 # import pandas as pd
 from jinja2  import TemplateNotFound
 import os
+import datetime
 
 from application import application
 from .scheduler import runScheduler
@@ -76,12 +77,14 @@ def schedule():
 
     return render_template('schedule.html')
 
+# @application.route('/data')
+# def data():
+#     """send current content"""
+#     return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 #background process happening without any refreshing
 @application.route('/background_process_test')
 def background_process_test():
-   
-    print("Getting input")
 
     teacherInput = session.get('teacherInput', None)
 
@@ -91,7 +94,9 @@ def background_process_test():
     runScheduler.scheduleForAMS(teacherInput)
 
     print("SHEDULER COMPLETE")
-    return ("nothing")
+
+    # return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    return "SHEDULER COMPLETE"
 
 @application.route('/scheduleCompleted', methods=['POST'])
 def scheduleCompleted():
@@ -101,5 +106,3 @@ def scheduleCompleted():
 def download_file():
     p = "excell/export/output.xlsx"
     return send_file(p, as_attachment=True)
-
-
