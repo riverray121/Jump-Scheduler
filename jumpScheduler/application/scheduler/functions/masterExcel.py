@@ -6,6 +6,8 @@ import xlsxwriter
 import shutil
 from copy import deepcopy
 from openpyxl import load_workbook
+import time
+import math
 
 
 # Get import path information
@@ -270,13 +272,16 @@ def writeToMasterExcell(teamStudentsDic):
 
     # Initial call to print 0% progress
     print('EDITING EXCELL SHEET')
-    operations.printProgressBar(0, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
+    #operations.printProgressBar(0, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     # Update the cores for each student in the master excell sheet 
     for i in range(2, 130):
 
+        time.sleep(0.01)
+
         # Update Progress Bar
-        operations.printProgressBar(i - 1, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
+        settings.scheduleProgress = int(math.ceil((i/130) * 100))
+        #operations.printProgressBar(i - 1, 130, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
         stuID = str(teamSheet[f'C{i}'].value)
 

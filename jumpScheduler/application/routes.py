@@ -10,6 +10,7 @@ import datetime
 
 from application import application
 from .scheduler import runScheduler
+from .scheduler import settings
 from .scheduler.functions import opperations
 
 # App main route + generic routing
@@ -97,6 +98,12 @@ def background_process_test():
 
     # return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     return "SHEDULER COMPLETE"
+
+@application.route('/progress')
+def schedule_progress():
+    # print(opperations.getScheduleProgress())
+    # print("\n")
+    return str(opperations.getScheduleProgress())
 
 @application.route('/scheduleCompleted', methods=['POST'])
 def scheduleCompleted():

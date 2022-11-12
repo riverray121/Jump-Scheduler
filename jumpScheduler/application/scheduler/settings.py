@@ -27,6 +27,9 @@ def initVariables():
     global xlConstTwo
     xlConstTwo = 2
 
+    global scheduleProgress
+    scheduleProgress = 0 
+
     global workbook 
     workbook = xlsxwriter.Workbook("application/excell/generated/Book1.xlsx") 
     global worksheet
