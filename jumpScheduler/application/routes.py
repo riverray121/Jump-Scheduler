@@ -47,7 +47,7 @@ def teacherInput():
 @application.route('/schedule', methods=['POST'])
 def schedule():
 
-    globalSettings.initGlobalVariables()
+    runScheduler.initGlobalWebSettings()
 
     ratingsArray = []
     firsttext = request.form['gender ratio']

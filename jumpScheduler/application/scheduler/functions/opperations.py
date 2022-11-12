@@ -43,6 +43,7 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
     if iteration == total: 
         print()
 
+
 def cleanTXTFiles():
     """ Function to clean previous classes.txt
     """
