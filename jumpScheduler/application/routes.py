@@ -10,6 +10,7 @@ import datetime
 
 from application import application
 from .scheduler import runScheduler
+from .scheduler import settings
 from .scheduler.functions import opperations
 
 # App main route + generic routing
@@ -33,6 +34,7 @@ def teacherInput():
         if not os.path.exists(f'{application.config.root_path}/excell/export'): os.mkdir(f'{application.config.root_path}/excell/export')
         if not os.path.exists(f'{application.config.root_path}/excell/generated'): os.mkdir(f'{application.config.root_path}/excell/generated')
         
+        settings.initVariables()
         opperations.removeOldFiles()
 
         file.save(f'{application.config.root_path}/excell/import/output.xlsx')
@@ -97,6 +99,11 @@ def background_process_test():
 
     # return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     return "SHEDULER COMPLETE"
+
+@application.route('/progress')
+def schedule_progress():
+    print(settings.scheduleProgress)
+    return str(settings.scheduleProgress)
 
 @application.route('/scheduleCompleted', methods=['POST'])
 def scheduleCompleted():

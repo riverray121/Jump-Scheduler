@@ -17,3 +17,14 @@ body {
         background-position: 0% 50%;
     }
 }
+
+#myProgress {
+    width: 100%;
+    background-color: grey;
+  }
+  
+  #myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+  }

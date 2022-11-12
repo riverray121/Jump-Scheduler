@@ -18,8 +18,8 @@ def scheduleForAMS(teacherInputs):
     
     """
 
-    # Initiate all global variables 
-    settings.initVariables()
+    # # Initiate all global variables 
+    # settings.initVariables()
 
     # Clean .txt files
     operations.cleanTXTFiles()
