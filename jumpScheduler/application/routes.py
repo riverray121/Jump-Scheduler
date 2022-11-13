@@ -114,6 +114,6 @@ def download_file():
     p = "excell/export/output.xlsx"
     return send_file(p, as_attachment=True)
 
-@application.route('/test', methods=['GET', 'POST'])
-def test():
+@application.route('/login', methods=['GET', 'POST'])
+def login():
     return render_template('login.html')
