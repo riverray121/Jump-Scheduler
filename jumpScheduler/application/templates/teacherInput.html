@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/gradient.css') }}">
-</head>
-<body>
-    <div id="main">
+{% extends 'base.html' %}
+
+{% block main %}
+<div id="main">
     <h1> On a Scale of 1->10, How Much do You Value: </h1>
     <form action="/schedule" method="POST" id="input_form">
     
@@ -65,24 +60,5 @@
     <input type="submit" value="Submit" id="sub_button">
 
     </form>
-    </div>
-</body>
-</html>
-
-
-<!-- onclick="$('#loading').show(); -->
-
-<!-- <!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-</head>
-<form method="POST">
-    <input name="text">
-    <input type="submit">
-</form>
-<form method="POST">
-    <input name="text">
-    <input type="submit">
-</form> -->
+</div>
+{% endblock %}
