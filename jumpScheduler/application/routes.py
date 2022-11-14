@@ -40,12 +40,15 @@ def schedule_progress():
     # print("\n")
     return str(opperations.getScheduleProgress())
 
-
-
 @application.route('/excell-download')
 def download_file():
     p = "excell/export/output.xlsx"
     return send_file(p, as_attachment=True)
+
+@application.route('/download-file-ams-manz')
+def download_file_ams_manz():
+    f = "excell/AMS-MANZ/2022.23 Manzanita Master Schedule example 2.xlsx"
+    return send_file(f, as_attachment=True)
 
 @application.route('/login', methods=['GET', 'POST'])
 def login():
