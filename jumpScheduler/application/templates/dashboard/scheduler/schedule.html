@@ -1,0 +1,39 @@
+{% extends 'dashboard/scheduler/scheduler-base.html' %}
+
+{% block schedule %}
+<h1>Schedule</h1>
+
+    <div id="myProgress">
+        <div id="myprogressBar"></div>
+        Completion Status: <span id="status"><span></span>
+    </div>
+    
+    <a href=# id=run><button class='btn btn-default' onclick="updateHandler()">Run Scheduler</button></a>
+
+    <div id="loading" style="display:none;"> <img src="static/images/loadingGif.gif" alt="" /></div>
+
+    </form>
+    <form action="/scheduler-completed" style="display:none;" method="POST" id="input_form" enctype = "multipart/form-data">
+        <input type = "submit" value="Scheduling Finished"/>
+    </form>
+
+    <script>
+        function updateHandler() {
+            var element = document.getElementById("myprogressBar");   
+            var width = 0;
+            function update() {
+                $.get('/progress', function(data) {
+                    // $('#status').html(data);  // update page with new data
+                    if (width >= 100) {
+                        return false
+                    } else {
+                        width = parseInt(data); 
+                        element.style.width = width + '%'; 
+                    }
+                });
+            }
+            setInterval(update, 100);  // run `update()` every 1000ms (1s)
+        }
+
+    </script>
+{% endblock %}

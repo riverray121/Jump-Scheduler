@@ -18,20 +18,66 @@ from .scheduler.functions import opperations
 def index():
     return render_template('/index.html')
 
-# @app.route('/login')
-# def login():
-#     return "<h1>Welcome</h1>"
+#background process happening without any refreshing
+@application.route('/background_process_test')
+def background_process_test():
+
+    teacherInput = session.get('teacherInput', None)
+
+    print("RUNNING SCHEDULER")
+
+    # Run the scheuduler using the uploaded excell file and the teacher input / preferences 
+    runScheduler.scheduleForAMS(teacherInput)
+
+    print("SHEDULER COMPLETE")
+
+    # return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    return "SHEDULER COMPLETE"
+
+@application.route('/progress')
+def schedule_progress():
+    # print(opperations.getScheduleProgress())
+    # print("\n")
+    return str(opperations.getScheduleProgress())
 
 
-    
-@application.route('/teacher-input', methods=['GET', 'POST'])
+
+@application.route('/excell-download')
+def download_file():
+    p = "excell/export/output.xlsx"
+    return send_file(p, as_attachment=True)
+
+@application.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
+
+@application.route('/dashboard', methods=['GET', 'POST'])
+def dashboard():
+    return render_template('dashboard/dashboard-dashboard.html')
+
+@application.route('/dashboard-analytics', methods=['GET'])
+def dashboardAnalytics():
+    return render_template('dashboard/dashboard-analytics.html')
+
+@application.route('/dashboard-team', methods=['GET'])
+def dashboardTeam():
+    return render_template('dashboard/dashboard-team.html')
+
+
+# Scheduler Routes
+@application.route('/scheduler-excell-import', methods=['GET', 'POST'])
+def excelImport():
+    return render_template('dashboard/scheduler/excel-import.html')
+
+@application.route('/scheduler-teacher-input', methods=['GET', 'POST'])
 def teacherInput():
     if request.method == 'POST':
         file = request.files['file'] 
         if not os.path.exists(f'{application.config.root_path}/excell/import'): os.mkdir(f'{application.config.root_path}/excell/import')
         if not os.path.exists(f'{application.config.root_path}/excell/export'): os.mkdir(f'{application.config.root_path}/excell/export')
         if not os.path.exists(f'{application.config.root_path}/excell/generated'): os.mkdir(f'{application.config.root_path}/excell/generated')
-        
+        if not os.path.exists(f'{application.config.root_path}/static/generated'): os.mkdir(f'{application.config.root_path}/static/generated')
+
         opperations.removeOldFiles()
 
         file.save(f'{application.config.root_path}/excell/import/output.xlsx')
@@ -39,9 +85,9 @@ def teacherInput():
         #data = pd.read_excel(f'jumpScheduler/application/excell/import/output.xlsx')
         
         #return render_template('ratings.html', data=data.to_dict())
-        return render_template('teacherInput.html')
+        return render_template('dashboard/scheduler/teacher-input.html')
 
-@application.route('/schedule', methods=['POST'])
+@application.route('/scheduler-schedule', methods=['POST'])
 def schedule():
 
     ratingsArray = []
@@ -74,62 +120,8 @@ def schedule():
 
     session['teacherInput'] = teacherInput
 
-    return render_template('schedule.html')
+    return render_template('dashboard/scheduler/schedule.html')
 
-# @application.route('/data')
-# def data():
-#     """send current content"""
-#     return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-#background process happening without any refreshing
-@application.route('/background_process_test')
-def background_process_test():
-
-    teacherInput = session.get('teacherInput', None)
-
-    print("RUNNING SCHEDULER")
-
-    # Run the scheuduler using the uploaded excell file and the teacher input / preferences 
-    runScheduler.scheduleForAMS(teacherInput)
-
-    print("SHEDULER COMPLETE")
-
-    # return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    return "SHEDULER COMPLETE"
-
-@application.route('/progress')
-def schedule_progress():
-    # print(opperations.getScheduleProgress())
-    # print("\n")
-    return str(opperations.getScheduleProgress())
-
-@application.route('/scheduleCompleted', methods=['POST'])
+@application.route('/scheduler-completed', methods=['POST'])
 def scheduleCompleted():
-    return render_template('excelDownload.html')
-
-@application.route('/excell-download')
-def download_file():
-    p = "excell/export/output.xlsx"
-    return send_file(p, as_attachment=True)
-
-@application.route('/login', methods=['GET', 'POST'])
-def login():
-    return render_template('login.html')
-
-@application.route('/dashboard', methods=['GET', 'POST'])
-def dashboard():
-    return render_template('dashboard/dashboard-dashboard.html')
-
-@application.route('/dashboard-analytics', methods=['GET'])
-def dashboardAnalytics():
-    return render_template('dashboard/dashboard-analytics.html')
-
-@application.route('/dashboard-team', methods=['GET'])
-def dashboardTeam():
-    return render_template('dashboard/dashboard-team.html')
-
-
-# Scheduler Routes
-@application.route('/scheduler-excell-import', methods=['GET'])
-def excelImport():
-    return render_template('dashboard/scheduler/excel-import.html')
+    return render_template('dashboard/scheduler/download-output.html')

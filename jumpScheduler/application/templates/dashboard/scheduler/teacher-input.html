@@ -1,0 +1,68 @@
+{% extends 'dashboard/scheduler/scheduler-base.html' %}
+
+{% block schedule %}
+<div class="w3-display-left w3-text-white" style="padding:48px">
+  <div id="main">
+      <h1 style="color:rgb(11, 11, 11); font: italic"> Step 2: Answer a Quick Questionaire... </h1>
+      <h1 style="color:rgb(11, 11, 11);"> On a Scale of 1->10, How Much do You Value: </h1>
+      <form action="/scheduler-schedule" method="POST" id="input_form">
+      
+      <label for="genderRatio" style="color:rgb(11, 11, 11);">An Equal Gender Ratio                 :</label>
+      <input type="text" placeholder="Gender Ratio" name="gender ratio"><br>
+  
+      <label for="seventhToEighthRatio" style="color:rgb(11, 11, 11);">An Equal Ratio of Seventh to Eighth Graders:</label>
+      <input type="text" placeholder="Grade Ratio" name="grade ratio"><br>
+  
+      <label for="Behavior" style="color:rgb(11, 11, 11);">An Even Distribution of Behavioral Ratings:</label>
+      <input type="text" placeholder="Behavior Ratings" name="behavior ratings"><br>
+  
+      <label for="Academic" style="color:rgb(11, 11, 11);">An Even Distribution of Academic Ratings:</label>
+      <input type="text" placeholder="Academic Ratings" name="academic ratings"><br>
+  
+      <label for="Reading" style="color:rgb(11, 11, 11);">An Even Distribution of Reading Ratings:</label>
+      <input type="text" placeholder="Reading Ratings" name="reading ratings"><br>
+  
+      <label for="Writing" style="color:rgb(11, 11, 11);">An Even Distribution of Writing Ratings:</label>
+      <input type="Writing" placeholder="Writing Ratings" name="writing ratings"><br>
+  
+      <h1 style="color:rgb(11, 11, 11);"> Please enter the team you would like to schedule for: </h1>
+      <label for="team" style="color:rgb(11, 11, 11);">Aspen (1), Manzinita (2), Sequoia (3): </label>
+      <input type="text" placeholder="Team" name="team ID"><br>
+  
+      <h1 style="color:rgb(11, 11, 11);"> Please select the classes you would like to schedule: </h1>
+      <div>
+          <input type="checkbox" id="M_INT_MATH8" name="math8" value="M_INT_MATH8" />
+          <label for="M_INT_MATH8" style="color:rgb(11, 11, 11);">M_INT_MATH8</label>
+      </div>
+      <div>
+          <input type="checkbox" id="M_INT_MATH7" name="math7" value="M_INT_MATH7" />
+          <label for="M_INT_MATH7" style="color:rgb(11, 11, 11);">M_INT_MATH7</label>
+      </div>
+      <div>
+          <input type="checkbox" id="M_SPN_ADV" name="advspn" value="M_SPN_ADV" />
+          <label for="M_SPN_ADV" style="color:rgb(11, 11, 11);">M_SPN_ADV</label>
+      </div>
+      <div>
+          <input type="checkbox" id="M_SPN" name="spn" value="M_SPN" />
+          <label for="M_SPN" style="color:rgb(11, 11, 11);">M_SPN</label>
+      </div>
+      <div>
+          <input type="checkbox" id="M_SS_7_8" name="socialstud" value="M_SS_7_8" />
+          <label for="M_SS_7_8" style="color:rgb(11, 11, 11);">M_SS_7_8</label>
+      </div>
+      <div>
+          <input type="checkbox" id="M_SCI" name="sci" value="M_SCI" />
+          <label for="M_SCI" style="color:rgb(11, 11, 11);">M_SCI</label>
+      </div>
+      <div>
+          <input type="checkbox" id="M_LA" name="langart" value="M_LA" />
+          <label for="M_LA" style="color:rgb(11, 11, 11);">M_LA</label>
+      </div>
+  
+      <input type="submit" value="Submit" id="sub_button">
+  
+      </form>
+      </div>
+
+ </div> 
+{% endblock %}

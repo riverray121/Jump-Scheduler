@@ -12,6 +12,22 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script type=text/javascript>
+            $(function() {
+            $('a#run').on('click', function(e) {
+                $('#loading').show(); 
+                $('#run').hide(); 
+                e.preventDefault()
+                $.get('/background_process_test', function(data) {
+                    $('#status').html(data);  // update page with new data  
+                    $('#input_form').show();
+                });
+                return false;
+            });
+            });
+    </script>
+
    </head>
 <body>
   <div class="sidebar">

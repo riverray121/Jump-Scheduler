@@ -510,3 +510,21 @@ nav .profile-details i{
     width: calc(100% - 60px);
   }
 }
+
+
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myprogressBar {
+  width: 0%;
+  height: 30px;
+  background-color: green;
+}
+
+#list  p {
+  font: arial;
+  font-size: 14px;
+  background-color: yellow ;
+}
