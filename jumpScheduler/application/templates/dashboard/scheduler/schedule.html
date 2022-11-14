@@ -1,6 +1,7 @@
 {% extends 'dashboard/scheduler/scheduler-base.html' %}
 
 {% block schedule %}
+
 <h1>Step 3. Schedule</h1>
 
     <div id="myProgress">
@@ -21,18 +22,18 @@
         function updateHandler() {
             var element = document.getElementById("myprogressBar");   
             var width = 0;
-            function update() {
+            // update the progress bar until the scheduler is completed 
+            const interval = setInterval(function() {
                 $.get('/progress', function(data) {
                     // $('#status').html(data);  // update page with new data
                     if (width >= 100) {
-                        return false
+                        clearInterval(interval)
                     } else {
                         width = parseInt(data); 
-                        element.style.width = width + '%'; 
+                        element.style.width = width + '%';
                     }
                 });
-            }
-            setInterval(update, 100);  // run `update()` every 1000ms (1s)
+            })
         }
 
     </script>

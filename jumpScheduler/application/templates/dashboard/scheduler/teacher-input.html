@@ -5,25 +5,75 @@
   <div id="main">
       <h1 style="color:rgb(11, 11, 11); font: italic"> Step 2: Answer a Quick Questionaire... </h1>
       <h1 style="color:rgb(11, 11, 11);"> On a Scale of 1->10, How Much do You Value: </h1>
+
+      <br>
+
       <form action="/scheduler-schedule" method="POST" id="input_form">
-      
-      <label for="genderRatio" style="color:rgb(11, 11, 11);">An Equal Gender Ratio                 :</label>
-      <input type="text" placeholder="Gender Ratio" name="gender ratio"><br>
+
+        <div class="genderInput">
+            <label for="genderRatio">Equal Distribution By Gender: </label>
+            <label id="gender">0</label>
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="20" value="1" class="slider" id="genderRange" name="gender ratio">
+        </div>
+
+        <div class="gradeInput">
+            <label for="gradeRatio">Equal Distribution By Grade: </label>
+            <label id="grade">0</label>
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="20" value="1" class="slider" id="gradeRange" name="grade ratio">
+        </div>
+
+        <div class="behaviorInput">
+            <label for="behaviorRatio">Equal Distribution By Behavior: </label>
+            <label id="behavior">0</label>
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="20" value="1" class="slider" id="behaviorRange" name="behavior ratings">
+        </div>
+
+        <div class="academicInput">
+            <label for="academicRatio">Equal Distribution By Academics: </label>
+            <label id="academic">0</label>
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="20" value="1" class="slider" id="academicRange" name="academic ratings">
+        </div>
+
+        <div class="readingInput">
+            <label for="readingRatio">Equal Distribution By Reading Abilities: </label>
+            <label id="reading">0</label>
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="20" value="1" class="slider" id="readingRange" name="reading ratings">
+        </div>
+
+        <div class="writingInput">
+            <label for="writingRatio">Equal Distribution By Writing Abilities: </label>
+            <label id="writing">0</label>
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="20" value="1" class="slider" id="writingRange" name="writing ratings">
+        </div>
+
+
   
-      <label for="seventhToEighthRatio" style="color:rgb(11, 11, 11);">An Equal Ratio of Seventh to Eighth Graders:</label>
-      <input type="text" placeholder="Grade Ratio" name="grade ratio"><br>
+      <!-- <label for="seventhToEighthRatio" style="color:rgb(11, 11, 11);">An Equal Ratio of Seventh to Eighth Graders:</label>
+      <input type="text" placeholder="Grade Ratio" name="grade ratio"><br> -->
   
-      <label for="Behavior" style="color:rgb(11, 11, 11);">An Even Distribution of Behavioral Ratings:</label>
-      <input type="text" placeholder="Behavior Ratings" name="behavior ratings"><br>
+      <!-- <label for="Behavior" style="color:rgb(11, 11, 11);">An Even Distribution of Behavioral Ratings:</label>
+      <input type="text" placeholder="Behavior Ratings" name="behavior ratings"><br> -->
   
-      <label for="Academic" style="color:rgb(11, 11, 11);">An Even Distribution of Academic Ratings:</label>
-      <input type="text" placeholder="Academic Ratings" name="academic ratings"><br>
+      <!-- <label for="Academic" style="color:rgb(11, 11, 11);">An Even Distribution of Academic Ratings:</label>
+      <input type="text" placeholder="Academic Ratings" name="academic ratings"><br> -->
   
-      <label for="Reading" style="color:rgb(11, 11, 11);">An Even Distribution of Reading Ratings:</label>
-      <input type="text" placeholder="Reading Ratings" name="reading ratings"><br>
+      <!-- <label for="Reading" style="color:rgb(11, 11, 11);">An Even Distribution of Reading Ratings:</label>
+      <input type="text" placeholder="Reading Ratings" name="reading ratings"><br> -->
   
-      <label for="Writing" style="color:rgb(11, 11, 11);">An Even Distribution of Writing Ratings:</label>
-      <input type="Writing" placeholder="Writing Ratings" name="writing ratings"><br>
+      <!-- <label for="Writing" style="color:rgb(11, 11, 11);">An Even Distribution of Writing Ratings:</label>
+      <input type="Writing" placeholder="Writing Ratings" name="writing ratings"><br> -->
   
       <h1 style="color:rgb(11, 11, 11);"> Please enter the team you would like to schedule for: </h1>
       <label for="team" style="color:rgb(11, 11, 11);">Aspen (1), Manzinita (2), Sequoia (3): </label>
@@ -61,25 +111,52 @@
   
       <input type="submit" value="Submit" id="sub_button">
 
-      <div class="slidecontainer">
-        <input type="range" min="1" max="20" value="1" class="slider" id="myRange">
-      </div>
-      <div>
-        <label id="demo">0</label>
-      </div>
   
       </form>
       </div>
 
  </div> 
  <script>
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("demo");
-    output.innerHTML = slider.value; // Display the default slider value
+
+    var genderSlider = document.getElementById("genderRange");
+    var genderOutput = document.getElementById("gender");
+    var gradeSlider = document.getElementById("gradeRange");
+    var gradeOutput = document.getElementById("grade");
+    var behaviorSlider = document.getElementById("behaviorRange");
+    var behaviorOutput = document.getElementById("behavior");
+    var academicSlider = document.getElementById("academicRange");
+    var academicOutput = document.getElementById("academic");
+    var readingSlider = document.getElementById("readingRange");
+    var readingOutput = document.getElementById("reading");
+    var writingSlider = document.getElementById("writingRange");
+    var writingOutput = document.getElementById("writing");
+
+    genderOutput.innerHTML = genderSlider.value; // Display the default slider value
+    gradeOutput.innerHTML = gradeSlider.value; // Display the default slider value
+    behaviorOutput.innerHTML = behaviorSlider.value; // Display the default slider value
+    academicOutput.innerHTML = academicSlider.value; // Display the default slider value
+    readingOutput.innerHTML = readingSlider.value; // Display the default slider value
+    writingOutput.innerHTML = writingSlider.value; // Display the default slider value
 
     // Update the current slider value (each time you drag the slider handle)
-    slider.oninput = function() {
-        output.innerHTML = this.value;
+    genderSlider.oninput = function() {
+        genderOutput.innerHTML = this.value;
     }
+    gradeSlider.oninput = function() {
+        gradeOutput.innerHTML = this.value;
+    }
+    behaviorSlider.oninput = function() {
+        behaviorOutput.innerHTML = this.value;
+    }
+    academicSlider.oninput = function() {
+        academicOutput.innerHTML = this.value;
+    }
+    readingSlider.oninput = function() {
+        readingOutput.innerHTML = this.value;
+    }
+    writingSlider.oninput = function() {
+        writingOutput.innerHTML = this.value;
+    }
+
   </script>
 {% endblock %}
