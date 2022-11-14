@@ -22,9 +22,7 @@ def index():
 # def login():
 #     return "<h1>Welcome</h1>"
 
-@application.route('/excell-upload', methods=['GET','POST'])
-def excellUpload():
-    return render_template('excellImport.html')
+
     
 @application.route('/teacher-input', methods=['GET', 'POST'])
 def teacherInput():
@@ -113,3 +111,25 @@ def scheduleCompleted():
 def download_file():
     p = "excell/export/output.xlsx"
     return send_file(p, as_attachment=True)
+
+@application.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
+
+@application.route('/dashboard', methods=['GET', 'POST'])
+def dashboard():
+    return render_template('dashboard/dashboard-dashboard.html')
+
+@application.route('/dashboard-analytics', methods=['GET'])
+def dashboardAnalytics():
+    return render_template('dashboard/dashboard-analytics.html')
+
+@application.route('/dashboard-team', methods=['GET'])
+def dashboardTeam():
+    return render_template('dashboard/dashboard-team.html')
+
+
+# Scheduler Routes
+@application.route('/scheduler-excell-import', methods=['GET'])
+def excelImport():
+    return render_template('dashboard/scheduler/excel-import.html')

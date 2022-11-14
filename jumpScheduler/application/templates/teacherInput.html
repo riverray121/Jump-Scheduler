@@ -1,12 +1,7 @@
-<!-- <!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/gradient.css') }}">
-</head>
-<body>
-    <div id="main">
+{% extends 'base.html' %}
+
+{% block main %}
+<div id="main">
     <h1> On a Scale of 1->10, How Much do You Value: </h1>
     <form action="/schedule" method="POST" id="input_form">
     
@@ -69,10 +64,10 @@
 </body>
 </html> -->
 
+{% endblock %}
 
 
-
-
+<!-- 
 
 <!DOCTYPE html>
 <html>
@@ -191,15 +186,8 @@
     
         </form>
         </div>
-    <!-- <span class="w3-jumbo w3-hide-small" style="color:rgb(11, 11, 11);">The Journey Begins Here</span><br>
-     <span class="w3-xxlarge w3-hide-large w3-hide-medium">The Journey Begins Here</span><br>
-     <p style="color:rgb(11, 11, 11); font-size:15px;">Step 1: Upload an excel file with all available classes, students, and the classes they should be taking.</p>
-     <form action = "/teacher-input" method = "POST" 
-      enctype = "multipart/form-data">
-      <input type = "file" name = "file" />
-      <input type = "submit"/>
-      </form>    -->
+
    </div> 
  </header>
 </body>
-
+ -->
