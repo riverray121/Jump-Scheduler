@@ -34,7 +34,7 @@ def background_process_test():
     print("SHEDULER COMPLETE")
 
     # return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    return "SHEDULER COMPLETE"
+    return "COMPLETE"
 
 @application.route('/progress')
 def schedule_progress():

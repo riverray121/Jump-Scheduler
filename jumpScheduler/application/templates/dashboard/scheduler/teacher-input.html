@@ -242,4 +242,19 @@
     document.addEventListener("click", closeAllSelect);
   </script>
 
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+  <script>
+    $("#input_form").submit(function(event){
+    // var valDDL = $(this).val();  
+            //event.preventDefault();
+            var valDDL = $("#teams").val();
+            if(valDDL=="0")
+            {
+                event.preventDefault();
+                alert("Please select a team to schedule for");
+            } 
+            
+    });
+  </script>
+
 {% endblock %}
