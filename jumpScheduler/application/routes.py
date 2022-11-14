@@ -24,6 +24,8 @@ def background_process_test():
 
     teacherInput = session.get('teacherInput', None)
 
+    print(teacherInput)
+
     print("RUNNING SCHEDULER")
 
     # Run the scheuduler using the uploaded excell file and the teacher input / preferences 

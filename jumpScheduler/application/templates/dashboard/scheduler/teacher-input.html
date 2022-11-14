@@ -7,7 +7,7 @@
 
         <br>
         
-        <h3 style="color:rgb(11, 11, 11);"> On a Scale of 1->10, How Much do You Value: </h3>
+        <h3 style="color:rgb(11, 11, 11);"> On a Scale of 1->20, How Much do You Value: </h3>
 
         <br>
 
@@ -74,34 +74,35 @@
             <br>
     
             <h3 style="color:rgb(11, 11, 11);"> Please select the classes you would like to schedule: </h3>
-            <div>
-                <input type="checkbox" id="M_INT_MATH8" name="math8" value="M_INT_MATH8" checked/>
-                <label for="M_INT_MATH8" style="color:rgb(11, 11, 11);">M_INT_MATH8</label>
-            </div>
-            <div>
-                <input type="checkbox" id="M_INT_MATH7" name="math7" value="M_INT_MATH7" checked/>
-                <label for="M_INT_MATH7" style="color:rgb(11, 11, 11);">M_INT_MATH7</label>
-            </div>
-            <div>
-                <input type="checkbox" id="M_SPN_ADV" name="advspn" value="M_SPN_ADV" checked/>
-                <label for="M_SPN_ADV" style="color:rgb(11, 11, 11);">M_SPN_ADV</label>
-            </div>
-            <div>
-                <input type="checkbox" id="M_SPN" name="spn" value="M_SPN" checked/>
-                <label for="M_SPN" style="color:rgb(11, 11, 11);">M_SPN</label>
-            </div>
-            <div>
-                <input type="checkbox" id="M_SS_7_8" name="socialstud" value="M_SS_7_8" checked/>
-                <label for="M_SS_7_8" style="color:rgb(11, 11, 11);">M_SS_7_8</label>
-            </div>
-            <div>
-                <input type="checkbox" id="M_SCI" name="sci" value="M_SCI" checked/>
-                <label for="M_SCI" style="color:rgb(11, 11, 11);">M_SCI</label>
-            </div>
-            <div>
-                <input type="checkbox" id="M_LA" name="langart" value="M_LA" checked/>
-                <label for="M_LA" style="color:rgb(11, 11, 11);">M_LA</label>
-            </div>
+
+            <label for="M_INT_MATH8" class="checkboxcontainer">M_INT_MATH8
+                <input type="checkbox" id="M_INT_MATH8" name="math8" value="M_INT_MATH8" checked="checked"/>
+                <span class="checkmark"></span>
+            </label>
+            <label for="M_INT_MATH7" class="checkboxcontainer">M_INT_MATH7
+                <input type="checkbox" id="M_INT_MATH8" name="math7" value="M_INT_MATH7" checked="checked"/>
+                <span class="checkmark"></span>
+            </label>
+            <label for="M_SPN_ADV" class="checkboxcontainer">M_SPN_ADV
+                <input type="checkbox" id="M_INT_MATH8" name="advspn" value="M_SPN_ADV" checked="checked"/>
+                <span class="checkmark"></span>
+            </label>
+            <label for="M_SPN" class="checkboxcontainer">M_SPN
+                <input type="checkbox" id="M_SPN" name="spn" value="M_SPN" checked="checked"/>
+                <span class="checkmark"></span>
+            </label>
+            <label for="M_SS_7_8" class="checkboxcontainer">M_SS_7_8
+                <input type="checkbox" id="M_SS_7_8" name="socialstud" value="M_SS_7_8" checked="checked"/>
+                <span class="checkmark"></span>
+            </label>
+            <label for="M_SCI" class="checkboxcontainer">M_SCI
+                <input type="checkbox" id="M_SCI" name="sci" value="M_SCI" checked="checked"/>
+                <span class="checkmark"></span>
+            </label>
+            <label for="M_LA" class="checkboxcontainer">M_LA
+                <input type="checkbox" id="M_LA" name="langart" value="M_LA" checked="checked"/>
+                <span class="checkmark"></span>
+            </label>
 
             <br>
 
@@ -158,7 +159,7 @@
   </script>
 
   <script>
-    
+
     var x, i, j, l, ll, selElmnt, a, b, c;
     /* Look for any elements with the class "custom-select": */
     x = document.getElementsByClassName("custom-select");
