@@ -368,7 +368,7 @@ nav .profile-details i{
 .schedule-boxes .box .button{
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .schedule-boxes .box .button a{
   color: #fff;
@@ -382,6 +382,46 @@ nav .profile-details i{
 }
 .schedule-boxes .box .button a:hover{
   background:  #0d3073;
+}
+
+/* Input file foarm styling */
+.schedule-boxes .box .button input{
+  color: #fff;
+  background: #0A2558;
+  padding: 4px 12px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  border: none;
+  cursor: pointer;
+
+}
+.schedule-boxes .box .button input:hover{
+  background:  #0d3073;
+}
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #0A2558;
+
+  padding: 4px 12px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 4px;
+  text-decoration: none;
+
+  /* padding: 10px 20px; */
+  /* border-radius: 4px; */
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d3073;
 }
 
 /* Right box */
@@ -533,7 +573,6 @@ nav .profile-details i{
 .slidecontainer {
   width: 100%; /* Width of the outside container */
 }
-
 /* The slider itself */
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
@@ -547,12 +586,10 @@ nav .profile-details i{
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
 }
-
 /* Mouse-over effects */
 .slider:hover {
   opacity: 1; /* Fully shown on mouse-over */
 }
-
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
@@ -563,7 +600,6 @@ nav .profile-details i{
   background: #0A2558; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
-
 .slider::-moz-range-thumb {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
@@ -571,3 +607,58 @@ nav .profile-details i{
   background: #0A2558; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
+
+
+/* DROPDOWN STYLE */
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+.select-selected {
+  background-color: #0A2558;
+}
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #0A2558;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
