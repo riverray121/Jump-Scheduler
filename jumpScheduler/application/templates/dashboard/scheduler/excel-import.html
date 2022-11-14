@@ -2,14 +2,14 @@
 
 {% block schedule %}
 <div class="w3-display-left w3-text-white" style="padding:48px">
-  <span class="w3-jumbo w3-hide-small" style="color:rgb(11, 11, 11);">The Journey Begins Here</span>
+  <h1 style="color:rgb(11, 11, 11); font: italic">The Journey Begins Here</h1>
   <br>
+  <h1 style="color:rgb(11, 11, 11); font: italic">Step 1: Upload an excel file with all available classes, students, and the classes they should be taking.</h1>
   <br>
-  <p style="color:rgb(11, 11, 11); font-size:15px;">Step 1: Upload an excel file with all available classes, students, and the classes they should be taking.</p>
   <form action = "/scheduler-teacher-input" method = "POST" enctype = "multipart/form-data">
    <input type = "file" name = "file" />
    <input type = "submit"/>
-   </form>
+  </form>
 </div> 
 
 <!-- <div class="schedule-details">
