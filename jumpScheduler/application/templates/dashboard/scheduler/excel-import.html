@@ -1,0 +1,51 @@
+{% extends 'dashboard/dashboard-base.html' %}
+
+{% block dashboard %}
+<a href="/dashboard" class="inactive">
+  <i class='bx bx-grid-alt' ></i>
+  <span class="links_name">Dashboard</span>
+</a>
+{% endblock %}
+
+{% block scheduler %}
+<a href="/scheduler-excell-import" class="active">
+  <i class='bx bx-box' ></i>
+  <span class="links_name">Scheduler</span>
+</a>
+{% endblock %}
+
+{% block analytics %}
+<a href="/dashboard-analytics" class="inactive">
+  <i class='bx bx-pie-chart-alt-2' ></i>
+  <span class="links_name">Analytics</span>
+</a>
+{% endblock %}
+
+{% block team %}
+<a href="/dashboard-team" class="inactive">
+  <i class='bx bx-user' ></i>
+  <span class="links_name">Team</span>
+</a>
+{% endblock %}
+
+{% block main %}
+<div class="home-content">
+
+    <div class="schedule-boxes">
+      <div class="main-scheduler box">
+        <div class="title">Spreadsheet Upload</div>
+        <br>
+        <div class="schedule-details">
+            <form action = "/teacher-input" method = "POST" enctype = "multipart/form-data">
+                <input type = "file" name = "file" />
+                <input type = "submit"/>
+             </form> 
+        </div>
+        <!-- <div class="button">
+          <a href="#">See All</a>
+        </div> -->
+      </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -261,6 +261,25 @@ nav .profile-details i{
   /* padding: 0 20px; */
 }
 
+
+.home-content .schedule-boxes{
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 20px; */
+}
+.home-content .schedule-boxes{
+  flex-direction: column;
+}
+.home-content .schedule-boxes .box{
+  width: 100%;
+  overflow-x: scroll;
+  margin-bottom: 30px;
+}
+.home-content .schedule-boxes .top-sales{
+  margin: 0;
+}
+
+
 /* left box */
 .home-content .sales-boxes .recent-sales{
   width: 65%;
@@ -310,6 +329,58 @@ nav .profile-details i{
   transition: all 0.3s ease;
 }
 .sales-boxes .box .button a:hover{
+  background:  #0d3073;
+}
+
+/* schedule box */
+.home-content .schedule-boxes .main-scheduler{
+  width: 96.5%;
+  background: #fff;
+  padding: 20px 30px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.home-content .schedule-boxes .schedule-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.schedule-boxes .box .title{
+  font-size: 24px;
+  font-weight: 500;
+  /* margin-bottom: 10px; */
+}
+.schedule-boxes .schedule-details li.topic{
+  font-size: 20px;
+  font-weight: 500;
+}
+.schedule-boxes .schedule-details li{
+  list-style: none;
+  margin: 8px 0;
+}
+.schedule-boxes .schedule-details li a{
+  font-size: 18px;
+  color: #333;
+  font-size: 400;
+  text-decoration: none;
+}
+.schedule-boxes .box .button{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.schedule-boxes .box .button a{
+  color: #fff;
+  background: #0A2558;
+  padding: 4px 12px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.schedule-boxes .box .button a:hover{
   background:  #0d3073;
 }
 
