@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block scheduler %}
-<a href="/scheduler-excell-import" class="active">
+<a href="/scheduler-excell-import" class="inactive">
   <i class='bx bx-box' ></i>
   <span class="links_name">Scheduler</span>
 </a>
@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block payment %}
-<a href="/dashboard-payment" class="inactive">
+<a href="/dashboard-payment" class="active">
   <i class='bx bx-user' ></i>
   <span class="links_name">Payment</span>
 </a>
@@ -31,14 +31,16 @@
 {% block main %}
 <div class="home-content">
 
-    <div class="schedule-boxes">
-      <div class="main-scheduler box">
-        <div class="title">Jump Schedule</div>
+  <div class="schedule-boxes">
+    <div class="main-scheduler box">
+      <div class="title">Jump Payment</div>
 
-        {% block schedule %}{% endblock %}
-
-      </div>
+      <form action="https://stripe.com/docs/connect/creating-a-payments-page" method = "POST">
+        <input type = "submit" value="Stripe"/>
+      </form>
 
     </div>
+
+  </div>
 </div>
 {% endblock %}

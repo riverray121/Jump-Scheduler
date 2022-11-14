@@ -59,9 +59,9 @@ def dashboard():
 def dashboardAnalytics():
     return render_template('dashboard/dashboard-analytics.html')
 
-@application.route('/dashboard-team', methods=['GET'])
-def dashboardTeam():
-    return render_template('dashboard/dashboard-team.html')
+@application.route('/dashboard-payment', methods=['GET'])
+def dashboardPayment():
+    return render_template('dashboard/dashboard-payment.html')
 
 
 # Scheduler Routes
