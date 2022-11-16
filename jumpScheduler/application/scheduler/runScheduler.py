@@ -52,4 +52,8 @@ def scheduleForAMS(teacherInputs):
     #functions.writeToExcelTest()
     teachInp.printAllStudentsSched(teamStudentsDic)
 
+    # Convert the excel sheets to a text file for the analytics page of the website
+    operations.convertExcelForWeb()
+
+
     masterXL.writeToMasterExcell(teamStudentsDic)
