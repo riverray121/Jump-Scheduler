@@ -49,7 +49,7 @@ def download_file():
 
 @application.route('/download-file-ams-manz')
 def download_file_ams_manz():
-    f = "excell/AMS-MANZ/2022.23 Manzanita Master Schedule example 2.xlsx"
+    f = "excell/AMS-MANZ/Manzanita Master Schedule example.xlsx"
     return send_file(f, as_attachment=True)
 
 @application.route('/login', methods=['GET', 'POST'])
