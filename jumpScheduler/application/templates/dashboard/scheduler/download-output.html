@@ -1,0 +1,21 @@
+{% extends 'dashboard/scheduler/scheduler-base.html' %}
+
+{% block schedule %}
+
+<br>
+
+<h3>Step 4. Download Your File</h3>
+
+<br>
+
+<div class="button">
+    <a href="{{url_for('download_file')}}">Download Schedule</a>
+</div>
+
+<br>
+
+<div class="button">
+    <a href="/scheduler-excell-import">Create Another Schedule</a>
+</div>
+
+{% endblock %}

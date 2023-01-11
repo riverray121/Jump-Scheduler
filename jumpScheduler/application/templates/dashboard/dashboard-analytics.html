@@ -1,0 +1,50 @@
+{% extends 'dashboard/dashboard-base.html' %}
+
+{% block dashboard %}
+<a href="/dashboard" class="inactive">
+  <i class='bx bx-grid-alt' ></i>
+  <span class="links_name">Dashboard</span>
+</a>
+{% endblock %}
+
+{% block scheduler %}
+<a href="/scheduler-excell-import" class="inactive">
+  <i class='bx bx-box' ></i>
+  <span class="links_name">Scheduler</span>
+</a>
+{% endblock %}
+
+{% block analytics %}
+<a href="/dashboard-analytics" class="active">
+  <i class='bx bx-pie-chart-alt-2' ></i>
+  <span class="links_name">Analytics</span>
+</a>
+{% endblock %}
+
+{% block payment %}
+<a href="/dashboard-payment" class="inactive">
+  <i class='bx bx-user' ></i>
+  <span class="links_name">Payment</span>
+</a>
+{% endblock %}
+
+
+{% block main %}
+<div class="home-content">
+
+  <div class="schedule-boxes">
+    <div class="main-scheduler box">
+      <div class="title">Jump Analytics</div>
+      <br>
+
+      <!-- <p>&nbsp;</p> -->
+      <div id="list">
+        <p><iframe src="static/generated/analytics.txt" frameborder="0" height="400"
+            width="100%"></iframe></p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}

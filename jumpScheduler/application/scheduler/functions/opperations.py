@@ -8,6 +8,7 @@ Functions for the general operations of the program and system
 import sys
 import os
 from os.path import exists
+import pandas as pd
 
 # Get import path information
 current = os.path.dirname(os.path.realpath(__file__))
@@ -43,6 +44,9 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
     if iteration == total: 
         print()
 
+def getScheduleProgress():
+    return settings.scheduleProgress
+
 def cleanTXTFiles():
     """ Function to clean previous classes.txt
     """
@@ -56,6 +60,12 @@ def cleanTXTFiles():
     with open("application/scheduler/printOuts/studentSchedules.txt", "w") as newFile:
 
             newFile.write(f'\n')
+    
+    # Clean StudentSchedules.txt file     
+    with open("application/static/generated/analytics.txt", "w") as newFile:
+
+            newFile.write(f'\n')
+
 
     # Clean excell file 
     if exists('application/excell/generated/Book2.xlsx'): 
@@ -69,6 +79,11 @@ def cleanTXTFiles():
     if exists('application/excell/generated/Book1.xlsx'): os.remove('application/excell/generated/Book1.xlsx')
 
     if exists('application/excell/import/.DS_Store'): os.remove('application/excell/import/.DS_Store')
+
+def removeOldFiles():
+
+    if exists('application/excell/import/output.xlsx'): os.remove('application/excell/import/output.xlsx')
+    if exists('application/excell/export/output.xlsx'): os.remove('application/excell/export/output.xlsx')
 
 def startUpPrompts():
     """ Get information from the user nessisary to run the program 
@@ -209,3 +224,30 @@ def sortClasses(team, AMSMasterSchedule):
     teamHRByCourseNum = classes.masterSchedule.sortCoresByCourseNum(teamHRClasses)
 
     return teamCoreClasses, teamHRClasses, teamCoresBySubject, teamCoresByCourseNum, teamHRByCourseNum
+
+def convertExcelForWeb():
+
+    analytFile = 'application/static/generated/analytics.txt'
+    remove = 'NaN'
+
+    with open(analytFile, 'w') as file:
+        pd.read_excel('application/excell/generated/Book1.xlsx', sheet_name="Side By Side Comparisons", skiprows=1).to_string(file, index=False)
+
+    # Read in the file
+    with open(analytFile, "r") as file:
+        filedata = file.read()
+
+    # Replace the target string
+    filedata = filedata.replace(remove, "")
+    filedata = filedata.replace("Unnamed: ", "")
+
+    # Write the file out again
+    with open(analytFile, "w") as file:
+        file.write(filedata)
+
+    # remove the first line 
+    with open(analytFile, 'r') as fin:
+        data = fin.read().splitlines(True)
+    with open(analytFile, 'w') as fout:
+        fout.writelines(data[1:])
+

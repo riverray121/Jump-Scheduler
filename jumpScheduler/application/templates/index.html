@@ -1,4 +1,4 @@
-<head>
+<!-- <head>
    <meta charset="UTF-8">
    <title>Home</title>
    <link rel="stylesheet" href="{{ url_for('static', filename='css/gradient.css') }}">
@@ -9,9 +9,415 @@
          enctype = "multipart/form-data">
          <input type = "submit"/>
       </form>
-      <h2>Download Your File</h2>
-      <p>
-         <a href="{{url_for('download_file')}}">Download</a>
-      </p>
+      <style>
+         p {
+           background-image: url('static/images/backgroundImage.png');
+         }
+      </style>
    </body>
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("static/images/backgroundImage.png");
+
+  /* Full height */
+  height: 60%; 
+  width: 60%;
+
+  /* Center and scale the image nicely */
+  background-position-x: 500%;
+  background-position-y: -200%;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<style> 
+#example1 {
+  background-image: url("static/images/backgroundImage.png"), url("static/images/loadingGif.gif");
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+
+<h1>Multiple Backgrounds</h1>
+<p>The following div element has two background images:</p>
+
+<div id="example1">
+  <h1>Lorem Ipsum Dolor</h1>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+</div>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+.navbar a:hover {
+  background-color: #000;
+
+}
+
+.active {
+  background-color: #04AA6D;
+
+}
+
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+
+  }
+}
+</style>
+<body>
+
+<img src="static/images/logo.png" alt="logo" width="200" height="75">
+
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+  <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+</div>
+
+<style>
+div.relative {
+   position: relative;
+   left: 200px;
+   padding: -300px;
+ }
+</style>
+<p> Here <br>is <br>an <br>image<br>that<br>I<br>like</p>
+<div class="relative">
+   <img src="static/images/backgroundImage.png" alt="background" width="500" height="400">
+</div>
+
+<form action = "/excell-upload" method = "POST" enctype = "multipart/form-data">
+  <input type = "submit"/>
+</form>
+
+
+</body>
+</html> 
+ -->
+
+
+
+
+
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Jump Scheduler</title>
+    <link rel="icon" href="static/images/logoIcon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+    body, html {
+      height: 100%;
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url("static/images/backgroundImage.png");
+      min-height: 100%;
+    }
+
+    .w3-bar .w3-button {
+      padding: 16px;
+    }
+    </style>
+  </head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="static/images/logo.png" alt="logo" width="100" height="40"></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">HOW IT WORKS</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> DEMO</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="/login" onclick="w3_close()" class="w3-bar-item w3-button">HOW IT WORKS</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">DEMO</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+<<<<<<< HEAD
+    <span class="w3-jumbo w3-hide-small" style="color:rgb(11, 11, 11);">Schedule all your Students' Classes in Seconds</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Schedule all your Students' Classes in Seconds</span><br>
+    <p><a href="/login" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Get Started!</a></p>
+=======
+    <span class="w3-jumbo w3-hide-small" style="color:rgb(11, 11, 11);"><strong>Schedule all your Students' Classes in Seconds</strong></span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium"><strong>Schedule all your Students' Classes in Seconds</strong>></span><br>
+    <span class="w3-large" style="color:rgb(34, 34, 34);"><strong>The best customizable class scheduling software in the game! You decide how you want to distribute students based on gender, behavior, grade, etc. and leave the rest to us.</strong></span>
+    <p><a href="/login" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off"><strong>Get Started!</strong></a></p>
+>>>>>>> 899915f56188370bffb6a18a7a3bf2b41c33930f
+  </div> 
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</header>
+
+
+
+<!-- About Section -->
+<!-- <div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">ABOUT THE COMPANY</h3>
+  <p class="w3-center w3-large">Key features of our company</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Responsive</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Passion</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Design</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Support</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+  </div>
+</div> -->
+
+<!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="about">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>Three Simple Steps.</h3>
+      <p>Step 1: Upload an excel file with all available classes, students, and the classes they should be taking.<br>Step 2: Answer a few easy questions about how you would like students to be distributed.<br>Step 3: Download your excel file complete with every students schedule.<br><br>Click "Get Started" to begin!</p>
+      <!-- <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p> -->
+      <p><a href="/login" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Get Started!</a></p>
+    </div>
+    <div class="w3-col m6">
+      <img class="w3-image w3-round-large" src="static/images/excelLogo.png" alt="Buildings" width="500" height="275">
+    </div>
+  </div>
+</div>
+
+<!-- Team Section -->
+<div class="w3-container" style="padding:128px 16px" id="team">
+  <h3 class="w3-center">THE TEAM</h3>
+  <p class="w3-center w3-large">We are here to help.</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="static/images/theoProfile.png" style="width:100%">
+        <div class="w3-container">
+          <h3>Theo Shapiro</h3>
+          <p class="w3-opacity">Co-Founder</p>
+          <p>Senior at Tufts University studying Computer Science and Economics, with over 6 years of working with kids.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="static/images/elijahProfile.png" alt="Elijah" style="width:100%">
+        <div class="w3-container">
+          <h3>Elijah Retzlaff</h3>
+          <p class="w3-opacity">Co-Founder</p>
+          <p>Product Manager with experience in robotics and software development, as well as student-tutoring.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container" style="padding:128px 16px" id="work">
+  <h3 class="w3-center">DEMO</h3>
+  <p class="w3-center w3-large">Try our demo to see how it works.</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="static/images/demo/Demo0.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Step 1">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="static/images/demo/Demo1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Step 2">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="static/images/demo/Demo2.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Step 3">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="static/images/demo/Demo3.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Step 4">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="static/images/demo/Demo4.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Step 5">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="static/images/demo/Demo5.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Step 6">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="static/images/demo/Demo6.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="All done!">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="static/images/demo/DemoVideo.mov" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Usage Demo">
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+  <div style="margin-top:48px">
+    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Boston, US</p>
+    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +1 (917) 599-7231</p>
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: theoshapiro1@gmail.com</p>
+    <br>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  </div>
+</div>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
 </html>
+
+
+
+

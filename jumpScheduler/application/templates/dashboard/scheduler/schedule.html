@@ -1,0 +1,52 @@
+{% extends 'dashboard/scheduler/scheduler-base.html' %}
+
+{% block schedule %}
+
+<br>
+
+<h1>Step 3. Schedule</h1>
+
+<br>
+
+<!-- <a href=# id=run><button onclick="updateHandler()">Run Scheduler</button></a> -->
+<div class="button">
+    <a href="#" id=run onclick="updateHandler()">Run Scheduler</a>
+</div>
+
+<br>
+
+<div>Completion Status: <span id="status"><span></span></div>
+<div id="myProgress">
+    <div id="myprogressBar"></div>
+</div>
+
+<div id="loading" style="display:none;"> <img src="static/images/loadingGif.gif" alt="" /></div>
+
+<br> 
+
+<form action="/scheduler-completed" style="display:none;" method="POST" id="input_form" enctype = "multipart/form-data">
+    <div class="button">
+        <input type = "submit" value="Scheduling Finished"/>
+    </div>
+</form>
+
+<script>
+    function updateHandler() {
+        var element = document.getElementById("myprogressBar");   
+        var width = 0;
+        // update the progress bar until the scheduler is completed 
+        const interval = setInterval(function() {
+            $.get('/progress', function(data) {
+                // $('#status').html(data);  // update page with new data
+                if (width >= 100) {
+                    clearInterval(interval)
+                } else {
+                    width = parseInt(data); 
+                    element.style.width = width + '%';
+                }
+            });
+        })
+    }
+
+</script>
+{% endblock %}
