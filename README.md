@@ -2,8 +2,8 @@
 
 A project by Theo Shapiro and Elijah Retzlaff
 
-[Instance Running on AWS](http://env04.eba-m7c24s4m.us-east-2.elasticbeanstalk.com/scheduler-excell-import)
-[Demo File Download Link](http://env04.eba-m7c24s4m.us-east-2.elasticbeanstalk.com/download-file-ams-manz)
+* [Instance Running on AWS](http://env04.eba-m7c24s4m.us-east-2.elasticbeanstalk.com/scheduler-excell-import)
+* [Demo File Download Link](http://env04.eba-m7c24s4m.us-east-2.elasticbeanstalk.com/download-file-ams-manz)
 
 ## Description
 
