@@ -222,3 +222,7 @@ jumpScheduler/application/excell/import/output.xlsx
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+
+# MacOS 
+.DS_Store
