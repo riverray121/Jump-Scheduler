@@ -16,3 +16,7 @@ Jump scheduler allows for a simple user friendly student scheduling expirience. 
 3. run 'python application.py'
 4. Open <http://127.0.0.1:5000> in browser
 5. Follow steps in demo show on home page to use scheduler
+
+
+https://github.com/riverray121/Jump-Scheduler/assets/72314936/65db4ce1-54fb-4a33-86b7-8591ead2042d
+
